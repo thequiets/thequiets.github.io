@@ -1,0 +1,56 @@
+<!-- 
+    Solution: http://pixelcog.com/blog/2013/jekyll-from-scratch-core-architecture/#building_site_navigation
+ -->
+{% capture location %}{{ page.url | remove_first:'/' | split:'/' | first }}{% endcapture %}
+    <nav class="navbar">
+      <ul class="row nav-list">
+
+        <!--Spring2015-->
+        <li class="col-xs-12 col-sm-12 col-md-2 col-lg-2 col ">
+          <div {% if location == '' or page.layout=='default' %}class="active" {% endif %}>
+            <small><a class="nav-link headline nav-link__home" href="{{ site.baseurl }}">Home<span class="icon icon-home"></span></a></small>
+            
+          </div>
+        </li>
+        <!-- end Spring2015-->
+        <li class="col-xs-12 col-sm-12 col-md-2 col-lg-2 col">
+          <div {% if location == 'programs'  %}class="active" {% endif %}>
+            <small><a  href="{{ site.baseurl }}programs" class="nav-link headline">Programs</a></small>
+          </div>
+        </li>
+        <li class="col-xs-12 col-sm-12 col-md-2 col-lg-2 col">
+          <div {% if location == 'community'  %}class="active" {% endif %}>
+            <small><a  href="{{ site.baseurl }}community" class="nav-link headline">Community</a></small>
+          </div>
+        </li>
+        
+        <!--li class="col-xs-12 col-sm-12 col-md-2 col-lg-2 col ">
+          <div {% if location == 'past-programs' %}class="active" {% endif %}>
+            <small><a  href="{{ site.baseurl }}past-programs" class="nav-link headline">Past Programs</a></small>
+          </div>
+        </li-->
+
+        <li class="col-xs-12 col-sm-12 col-md-2 col-lg-2 col">
+          <div {% if location == 'about' %}class="active" {% endif %}>
+            <small><a  href="{{ site.baseurl }}about/" class="nav-link headline">About</a></small>
+          </div>
+        </li>
+        <li class="col-xs-12 col-sm-12 col-md-2 col-lg-2 col">
+          <div {% if location == 'faq' %}class="active" {% endif %}>
+            <small><a  href="{{ site.baseurl }}faq/" class="nav-link headline">FAQ</a></small>
+          </div>
+        </li>
+        
+
+        <li class="col-xs-12 col-sm-12 col-md-2 col-lg-2 col">
+          <div {% if location=='blog' %}class="active" {% endif %}>
+            <small><a  href="http://blog.schoolofma.org/" class="nav-link headline">Blog</a></small>
+          </div>
+        </li>
+
+       
+
+      </ul>
+    </nav>
+
+
